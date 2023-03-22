@@ -1,6 +1,6 @@
 import { Box, Grid, Typography } from "@mui/material";
-import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 import { NavProps } from "../types";
 
@@ -13,7 +13,7 @@ const Nav = () => {
         <>
             <Box
                 component="nav"
-                position="absolute"
+                position="fixed"
                 left="calc( 50vw - 10vw)"
                 bottom="2vh"
                 bgcolor="#DA8816"
