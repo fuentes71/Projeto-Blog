@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { Home } from "../pages";
 import PageBase from "../pages/PageBase";
+import Users from "../pages/Users/Users";
 import { queryClient } from "../shared/server/api/queryClient";
 
 const AppRoutes: React.FC = () => {
@@ -12,7 +13,7 @@ const AppRoutes: React.FC = () => {
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<PageBase page={<Home />} />} />
-                    <Route path="/users" element={<PageBase page={<Home />} />} />
+                    <Route path="/users" element={<PageBase page={<Users />} />} />
                 </Routes>
             </BrowserRouter>
         </QueryClientProvider>
