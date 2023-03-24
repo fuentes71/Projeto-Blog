@@ -1,30 +1,153 @@
-import React, { useEffect } from "react";
-import { useMutation, useQuery } from "react-query";
-import { useParams } from "react-router-dom";
+import PersonIcon from "@mui/icons-material/Person";
+import {
+    Grid,
+    Box,
+    Divider,
+    Typography,
+    List,
+    ListItem,
+    ListItemAvatar,
+    Avatar,
+    ListItemText,
+    TextField,
+    InputBase,
+    ButtonBase,
+    Button,
+} from "@mui/material";
+import React, { useEffect, useState } from "react";
+import { useQuery } from "react-query";
+import { Link, useParams } from "react-router-dom";
 
 import { api } from "../../shared/server/api/api";
 
 export const Article: React.FC = () => {
+    const [comment, setComment] = useState<string>("");
+    const [publish, setPublish] = useState<boolean>(false);
     const params = useParams();
     const currentUser = params["*"] as unknown as string;
-    const { data, isFetching } = useQuery("posts", api.getPost);
+    const { data } = useQuery("posts", api.getPost);
     const { data: comments } = useQuery("comments", () => api.getComments(currentUser));
-
-    useEffect(() => {
-        console.log(comments);
-    }, [comments]);
-
     const post = data?.filter((post) =>
         post.id === Number(currentUser) ? post.id.toString().includes(currentUser) : false,
     );
+    useEffect(() => {
+        console.log(comment);
+        if (comment.length > 5) {
+            setPublish(true);
+        } else {
+            setPublish(false);
+        }
+    }, [comment]);
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        // validaçoes para adicionar comentario a api..
 
+        setComment("");
+    };
     return (
         <>
-            {post?.map((el) => (
-                <div key={el.id}>
-                    <p>{el.body}</p> <p>{el.title}</p> <p>{el.userId}</p>
-                </div>
-            ))}
+            <Grid container sm={12} justifyContent="center" width="100vw">
+                <Grid item sm={5} maxWidth={550}>
+                    <Box
+                        component="img"
+                        width="100%"
+                        src="https://picsum.photos/3000"
+                        alt="imagem randomica"
+                        style={{
+                            margin: "64px auto",
+                            backgroundRepeat: "no-repeat",
+                            backgroundSize: "",
+                        }}
+                    />
+                </Grid>
+                <Grid item sm={5} alignItems="center">
+                    {post?.map((el) => (
+                        <Box key={el.id}>
+                            <Typography component="h1" letterSpacing={2} variant="h4" m={8}>
+                                - {el.title}
+                            </Typography>
+                            <Typography component="p" m={8} variant="body1">
+                                {el.body}
+                                {el.body}
+                                {el.body}
+                                {el.body}
+                            </Typography>
+                        </Box>
+                    ))}
+                </Grid>
+                <Grid item sm={10} justifyContent="center">
+                    <Box component="div">
+                        <Typography component="p" variant="body2" fontFamily="cursive">
+                            {comments?.length} Comments
+                        </Typography>
+                        <Divider variant="middle" />
+                        <Box
+                            onSubmit={(ev: React.FormEvent<HTMLFormElement>) => handleSubmit(ev)}
+                            component="form"
+                            sx={{
+                                "& > :not(style)": { m: 1 },
+                            }}
+                            noValidate
+                            autoComplete="off"
+                        >
+                            <InputBase
+                                fullWidth
+                                value={comment}
+                                onChange={({ target }) => setComment(target.value)}
+                                sx={{ m: 2, flex: 1 }}
+                                placeholder="Escreva um comentario..."
+                            />
+                            <Box>
+                                <Button onClick={() => setComment("")}>Cancelar</Button>
+                                <Button
+                                    type="submit"
+                                    disabled={!publish}
+                                    variant={publish ? "outlined" : "text"}
+                                >
+                                    Publicar
+                                </Button>
+                            </Box>
+                        </Box>
+                    </Box>
+
+                    {comments?.map((comment) => (
+                        <Box key={comment.id}>
+                            <List
+                                sx={{
+                                    width: "100%",
+                                }}
+                            >
+                                <ListItem>
+                                    <ListItemAvatar>
+                                        <Link to={`/users/${comment.id}`}>
+                                            <Avatar>
+                                                <PersonIcon />
+                                            </Avatar>
+                                        </Link>
+                                    </ListItemAvatar>
+                                    <ListItemText
+                                        primary={`- ${comment.name}`}
+                                        secondary={
+                                            <>
+                                                <Typography
+                                                    sx={{ display: "inline" }}
+                                                    component="span"
+                                                    variant="body2"
+                                                    color="text.primary"
+                                                >
+                                                    {comment.email}
+                                                </Typography>
+                                            </>
+                                        }
+                                    />
+                                </ListItem>
+                                <Typography margin="0 64px">{comment.body}</Typography>
+                                <Divider variant="middle" />
+                            </List>
+                        </Box>
+                    ))}
+                </Grid>
+            </Grid>
         </>
     );
 };

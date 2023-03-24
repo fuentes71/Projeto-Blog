@@ -23,8 +23,6 @@ export const Home: React.FC = () => {
 
     const user = users?.length ? users?.map((user) => user.username) : [];
 
-    console.log(user);
-
     return (
         <>
             {isFetching && <Typography>Carregando...</Typography>}
@@ -38,7 +36,7 @@ export const Home: React.FC = () => {
                         flexDirection={post.id % 2 === 0 ? "row" : "row-reverse"}
                     >
                         <Grid item sm={3}>
-                            <Box component="div" alignItems="center" maxWidth={250}>
+                            <Box component="div" p={2} alignItems="center" maxWidth={550}>
                                 {isFetching ? (
                                     <Skeleton variant="rectangular" width="100%" height="100%" />
                                 ) : (
@@ -46,7 +44,7 @@ export const Home: React.FC = () => {
                                         component="img"
                                         width="100%"
                                         height="100%"
-                                        src="https://source.unsplash.com/random"
+                                        src="https://source.unsplash.com/1600x900/?portrait"
                                         alt="img"
                                     />
                                 )}

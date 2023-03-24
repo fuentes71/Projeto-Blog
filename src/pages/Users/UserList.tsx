@@ -47,7 +47,10 @@ export const UserList: React.FC = () => {
                                                 />
                                             </>
                                         ) : (
-                                            <Avatar alt={user.name} src={user.name} />
+                                            <Avatar
+                                                alt={user.name}
+                                                src="https://generated.photos/face-generator"
+                                            />
                                         )}
                                     </ListItemAvatar>
                                     <ListItemText
