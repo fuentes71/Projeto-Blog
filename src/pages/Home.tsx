@@ -8,14 +8,14 @@ import {
     Skeleton,
     Typography,
 } from "@mui/material";
-import { border } from "@mui/system";
-import React, { useEffect } from "react";
+import { FC, ReactElement } from "react";
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
 
+import { Footer } from "../shared/components/Footer";
 import { api } from "../shared/server/api/api";
 
-export const Home: React.FC = () => {
+export const Home: FC = (): ReactElement => {
     const { data: posts, isFetching } = useQuery("posts", api.getPost, {
         staleTime: 1000 * 60,
     });
@@ -137,6 +137,7 @@ export const Home: React.FC = () => {
                     </Grid>
                 ))}
             </List>
+            <Footer />
         </>
     );
 };

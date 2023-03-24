@@ -1,24 +1,11 @@
-import PersonIcon from "@mui/icons-material/Person";
-import {
-    Grid,
-    Box,
-    Divider,
-    Typography,
-    List,
-    ListItem,
-    ListItemAvatar,
-    Avatar,
-    ListItemText,
-    TextField,
-    InputBase,
-    ButtonBase,
-    Button,
-} from "@mui/material";
+import { Grid, Box, Divider, Typography, InputBase, Button } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useQuery } from "react-query";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
+import { Footer } from "../../shared/components/Footer";
 import { api } from "../../shared/server/api/api";
+import { ListComments } from "./ListComments";
 
 export const Article: React.FC = () => {
     const [comment, setComment] = useState<string>("");
@@ -31,7 +18,6 @@ export const Article: React.FC = () => {
         post.id === Number(currentUser) ? post.id.toString().includes(currentUser) : false,
     );
     useEffect(() => {
-        console.log(comment);
         if (comment.length > 5) {
             setPublish(true);
         } else {
@@ -112,42 +98,18 @@ export const Article: React.FC = () => {
 
                     {comments?.map((comment) => (
                         <Box key={comment.id}>
-                            <List
-                                sx={{
-                                    width: "100%",
-                                }}
-                            >
-                                <ListItem>
-                                    <ListItemAvatar>
-                                        <Link to={`/users/${comment.id}`}>
-                                            <Avatar>
-                                                <PersonIcon />
-                                            </Avatar>
-                                        </Link>
-                                    </ListItemAvatar>
-                                    <ListItemText
-                                        primary={`- ${comment.name}`}
-                                        secondary={
-                                            <>
-                                                <Typography
-                                                    sx={{ display: "inline" }}
-                                                    component="span"
-                                                    variant="body2"
-                                                    color="text.primary"
-                                                >
-                                                    {comment.email}
-                                                </Typography>
-                                            </>
-                                        }
-                                    />
-                                </ListItem>
-                                <Typography margin="0 64px">{comment.body}</Typography>
-                                <Divider variant="middle" />
-                            </List>
+                            <ListComments
+                                id={comment.id}
+                                name={comment.name}
+                                email={comment.email}
+                                body={comment.body}
+                                postId={comment.postId}
+                            />
                         </Box>
                     ))}
                 </Grid>
             </Grid>
+            <Footer />
         </>
     );
 };
