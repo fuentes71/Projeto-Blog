@@ -22,10 +22,6 @@ export const UserList: React.FC = () => {
         <>
             <List
                 sx={{
-                    width: "100%",
-                    height: "100vh",
-                    position: "relative",
-                    overflow: "auto",
                     "& ul": { padding: 0 },
                 }}
                 subheader={<li />}

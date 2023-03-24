@@ -27,7 +27,6 @@ export function User() {
               user.id === Number(currentUser) ? user.id.toString().includes(currentUser) : "",
           )
         : null;
-    console.log(user);
 
     useEffect(() => {
         setLoading(true);
@@ -38,7 +37,15 @@ export function User() {
     return (
         <>
             {user?.length ? (
-                <List sx={{ width: "auto", margin: "24px" }}>
+                <List
+                    sx={{
+                        width: "auto",
+                        margin: "24px",
+                        position: "fixed",
+                        alignItems: "center",
+                        justifyContent: "center",
+                    }}
+                >
                     <ListItem alignItems="flex-start">
                         <ListItemAvatar>
                             {loading ? (

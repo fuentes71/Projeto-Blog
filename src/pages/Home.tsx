@@ -1,69 +1,144 @@
 import {
-    Avatar,
     Box,
     Divider,
+    Grid,
     List,
     ListItem,
-    ListItemAvatar,
     ListItemText,
+    Skeleton,
     Typography,
 } from "@mui/material";
-import React from "react";
+import { border } from "@mui/system";
+import React, { useEffect } from "react";
 import { useQuery } from "react-query";
+import { Link } from "react-router-dom";
 
 import { api } from "../shared/server/api/api";
-import { queryClient } from "../shared/server/api/queryClient";
-import { PostProps } from "../shared/types";
 
-const Home: React.FC = () => {
-    const { data: posts, isFetching } = useQuery({
-        queryKey: ["posts"],
-        queryFn: api.getPost,
-        staleTime: 1000 * 60,
-        initialDataUpdatedAt: () => queryClient.getQueryState(["posts"])?.dataUpdatedAt,
-    });
-    const { data: users } = useQuery({
-        queryKey: ["users"],
-        queryFn: api.getUsers,
+export const Home: React.FC = () => {
+    const { data: posts, isFetching } = useQuery("posts", api.getPost, {
         staleTime: 1000 * 60,
     });
+    const { data: users } = useQuery("users", api.getUsers);
+
+    const user = users?.length ? users?.map((user) => user.username) : [];
+
+    console.log(user);
 
     return (
         <>
-            <Box>
-                {isFetching && <Typography>Carregando...</Typography>}
-                <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
-                    {posts?.map((post) => (
-                        <li key={post.id}>
-                            <ListItem key={post.id} alignItems="flex-start">
-                                <ListItemAvatar>
-                                    <Avatar alt={post.userId.toString()} />
-                                </ListItemAvatar>
-
+            {isFetching && <Typography>Carregando...</Typography>}
+            <List sx={{ width: "100%", bgcolor: "background.paper" }}>
+                {posts?.map((post) => (
+                    <Grid
+                        justifyContent="center"
+                        alignItems="center"
+                        key={post.id}
+                        container
+                        flexDirection={post.id % 2 === 0 ? "row" : "row-reverse"}
+                    >
+                        <Grid item sm={3}>
+                            <Box component="div" alignItems="center" maxWidth={250}>
+                                {isFetching ? (
+                                    <Skeleton variant="rectangular" width="100%" height="100%" />
+                                ) : (
+                                    <Box
+                                        component="img"
+                                        width="100%"
+                                        height="100%"
+                                        src="https://source.unsplash.com/random"
+                                        alt="img"
+                                    />
+                                )}
+                            </Box>
+                        </Grid>
+                        <Grid item sm={3}>
+                            <ListItem alignItems="flex-start">
                                 <ListItemText
-                                    primary={post.userId}
+                                    primary={
+                                        isFetching ? (
+                                            <>
+                                                <Skeleton
+                                                    variant="text"
+                                                    sx={{ fontSize: "1rem" }}
+                                                />
+                                                <Divider variant="fullWidth" />
+                                            </>
+                                        ) : (
+                                            <>
+                                                <Typography component="p" variant="h4" m={4}>
+                                                    {user[post.userId]}
+                                                </Typography>
+                                                <Divider variant="fullWidth" />
+                                            </>
+                                        )
+                                    }
                                     secondary={
-                                        <>
-                                            <Typography
-                                                sx={{ display: "inline" }}
-                                                component="span"
-                                                variant="body2"
-                                                color="text.primary"
-                                            >
-                                                {post.title} -{" "}
-                                            </Typography>
-                                            {post.body}
-                                        </>
+                                        isFetching ? (
+                                            <>
+                                                <Skeleton
+                                                    variant="text"
+                                                    sx={{ fontSize: "1rem" }}
+                                                />
+                                                <Skeleton
+                                                    variant="text"
+                                                    sx={{ fontSize: "1rem" }}
+                                                />
+                                            </>
+                                        ) : (
+                                            <>
+                                                <Typography
+                                                    sx={{ display: "inline-block" }}
+                                                    component="p"
+                                                    variant="h5"
+                                                    color="text.primary"
+                                                    justifyContent="center"
+                                                    m={2}
+                                                >
+                                                    {post.title}
+                                                </Typography>
+                                                <Typography
+                                                    sx={{ display: "inline-block" }}
+                                                    component="span"
+                                                    variant="body2"
+                                                    color="text.primary"
+                                                >
+                                                    {post.body}
+                                                </Typography>
+                                            </>
+                                        )
                                     }
                                 />
                             </ListItem>
-                            <Divider variant="inset" component="li" />
-                        </li>
-                    ))}
-                </List>
-            </Box>
+                            <Box component="div" width="90%" alignItems="end">
+                                <Box
+                                    component="button"
+                                    borderRadius="25px"
+                                    border="1px"
+                                    p="10px 15px"
+                                    justifyContent="center"
+                                    bgcolor="#DA8816"
+                                    m={2}
+                                >
+                                    {isFetching ? (
+                                        <Skeleton variant="text" sx={{ fontSize: "1rem" }} />
+                                    ) : (
+                                        <Link
+                                            to={`${post.id}`}
+                                            style={{
+                                                textDecoration: "none",
+                                                width: "100%",
+                                            }}
+                                        >
+                                            <Typography color="white">Saiba mais</Typography>
+                                        </Link>
+                                    )}
+                                </Box>
+                            </Box>
+                        </Grid>
+                    </Grid>
+                ))}
+            </List>
         </>
     );
 };
-
-export default Home;
