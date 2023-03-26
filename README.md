@@ -1,37 +1,34 @@
 ![logo do projeto](https://github.com/fuentes71/Projeto-Blog/tree/main/public/assets/favicon.ico)
 
 ## Wireless Tech Lab.
- - Este projeto seria uma simulação de um blog mostrando alguns exemplos.
 
+-   Este projeto seria uma simulação de um blog mostrando alguns exemplos.
 
-## Tecnologias 
+## Tecnologias
 
 Aqui estão as tecnologias utilizadas neste projeto.
 
-* ReactJS;
-* TypeScript;
-* Material UI;
-* Redux;
-* Axios;
-* React Router Dom;
-
-
+-   ReactJS;
+-   TypeScript;
+-   Material UI;
+-   React Query;
+-   Axios;
+-   React Router Dom;
 
 ## Services Used
 
-* Github
-* netlify
+-   Github
+-   netlify
 
-  * Para clonar o projeto siga estes passos:
+    -   Para clonar o projeto siga estes passos:
 
-      - git clone "(...).git"
-      - cd "fileDaPasta" (opcional, necessário apenas se você iniciar 'git clone' em uma pasta local no seu PC.)
-      - npm install
+        -   git clone "(...).git"
+        -   cd "fileDaPasta" (opcional, necessário apenas se você iniciar 'git clone' em uma pasta local no seu PC.)
+        -   npm install
 
-  * Para inicializar o projeto:
-  
-     - npm run dev
-  
+    -   Para inicializar o projeto:
+
+        -   npm run dev
 
 ## Como usar:
 
@@ -47,39 +44,35 @@ Aqui estão as tecnologias utilizadas neste projeto.
 
 ![lista de usuarios imagem](https://github.com/fuentes71/Projeto-Blog/tree/main/public/assets/screenShots/pageListUsers.png)
 
-### 4 - Está seria a tela após clicar no "Saiba mais", será redirecionado para a noticia podendo ver os comentarios e clicando no perfil do usuario sera redirecionado para a pagina mostrada anteriormente.  <<
+### 4 - Está seria a tela após clicar no "Saiba mais", será redirecionado para a noticia podendo ver os comentarios e clicando no perfil do usuario sera redirecionado para a pagina mostrada anteriormente. <<
 
 ![pagina artigo imagem](https://github.com/fuentes71/Projeto-Blog/tree/main/public/assets/screenShots/article.png)
 
-### 5 - Foi feito responsividade em todas as páginas, para que elas se adaptem a todos os tipos de telas. Segui alguns exemplos...  <<
+### 5 - Foi feito responsividade em todas as páginas, para que elas se adaptem a todos os tipos de telas. Segui alguns exemplos... <<
 
 ![pagina artigo responsividade: Notebook imagem](https://github.com/fuentes71/Projeto-Blog/tree/main/public/assets/screenShots/responsiveNote.png)
 
 ![pagina artigo responsividade: smarthphone imagem](https://github.com/fuentes71/Projeto-Blog/tree/main/public/assets/screenShots/responsiveSmarthPhone.png)
 
-
 ## Features
 
 As principais características do aplicativo são:
- - Útilização de API para simular um site estilo BLOG.
 
-
+-   Útilização de API para simular um site estilo BLOG.
 
 ## Links
-  - Deploy on https://mellifluous-sunburst-0aa1cd.netlify.app
-  - Repository: https://github.com/fuentes71/Projeto-Blog
 
+-   Deploy on https://mellifluous-sunburst-0aa1cd.netlify.app
+-   Repository: https://github.com/fuentes71/Projeto-Blog
 
-  ## Versão
+## Versão
 
-  1.0.0.0
+1.0.0.0
 
+## Autoria
 
+# **Matheus Fuentes Pereira**
 
-  ## Autoria
+-   Siga-me no GitHub e veja mais projetos futuros :)
 
-  # **Matheus Fuentes Pereira** 
-
-  - Siga-me no GitHub e veja mais projetos futuros :)
-  
-  - Obrigado pela visita e Bons codigos Dev. <3
+-   Obrigado pela visita e Bons codigos Dev. <3
