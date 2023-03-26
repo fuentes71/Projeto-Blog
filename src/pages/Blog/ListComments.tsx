@@ -1,12 +1,12 @@
 import PersonIcon from "@mui/icons-material/Person";
 import { List, Divider, ListItem, ListItemAvatar, ListItemText, Avatar, Box } from "@mui/material";
 import Typography from "@mui/material/Typography";
-import React from "react";
+import { FC, ReactElement } from "react";
 import { Link } from "react-router-dom";
 
 import { CommentsProps } from "../../shared/types";
 
-export const ListComments: React.FC<CommentsProps> = ({ id, name, email, body }) => {
+export const ListComments: FC<CommentsProps> = ({ id, name, email, body }): ReactElement => {
     return (
         <>
             <List
@@ -47,7 +47,7 @@ export const ListComments: React.FC<CommentsProps> = ({ id, name, email, body })
                         }
                     />
                 </ListItem>
-                <Box margin="0 4rem">
+                <Box margin="0 2vh">
                     <Typography component="span" variant="body1">
                         {body}
                     </Typography>

@@ -1,12 +1,15 @@
 import { CssBaseline } from "@mui/material";
 
 import AppRoutes from "./routes/AppRoutes";
+import { AppThemeProvider } from "./shared/contexts/ThemeContext";
 
 const App = () => {
     return (
         <>
             <CssBaseline />
-            <AppRoutes />
+            <AppThemeProvider>
+                <AppRoutes />
+            </AppThemeProvider>
         </>
     );
 };
