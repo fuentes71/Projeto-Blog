@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 import { useAppThemeContext } from "../../contexts/ThemeContext";
 import { NavProps } from "../../types";
 
-const Nav: FC = (): ReactElement => {
+export const Nav: FC = (): ReactElement => {
     const { themeName, toggleTheme } = useAppThemeContext();
     const theme = useTheme();
     const mdDown = useMediaQuery(theme.breakpoints.down("md"));

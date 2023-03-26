@@ -1,7 +1,7 @@
 import { ListItem, ListItemText, Typography } from "@mui/material";
 import React from "react";
 
-import { ItemListProps } from "../types";
+import { ItemListProps } from "../../types";
 
 export const ItemList: React.FC<ItemListProps> = ({ text }) => {
     return (

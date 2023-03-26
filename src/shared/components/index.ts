@@ -1,4 +1,5 @@
-import { ItemList } from "./ItemList";
-import Nav from "./nav/Nav";
+import { DrawerMenu } from "./drawer/DrawerMenu";
+import { ItemList } from "./itemList/ItemList";
+import { Nav } from "./nav/Nav";
 
-export { Nav, ItemList };
+export { Nav, ItemList, DrawerMenu };
