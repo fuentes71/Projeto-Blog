@@ -1,46 +1,85 @@
-# Getting Started with Create React App
+![logo do projeto](https://github.com/fuentes71/Projeto-Blog/tree/main/public/assets/favicon.ico)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Wireless Tech Lab.
+ - Este projeto seria uma simulação de um blog mostrando alguns exemplos.
 
-## Available Scripts
 
-In the project directory, you can run:
+## Tecnologias 
 
-### `npm start`
+Aqui estão as tecnologias utilizadas neste projeto.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* ReactJS;
+* TypeScript;
+* Material UI;
+* Redux;
+* Axios;
+* React Router Dom;
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Services Used
 
-### `npm run build`
+* Github
+* netlify
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  * Para clonar o projeto siga estes passos:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+      - git clone "(...).git"
+      - cd "fileDaPasta" (opcional, necessário apenas se você iniciar 'git clone' em uma pasta local no seu PC.)
+      - npm install
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  * Para inicializar o projeto:
+  
+     - npm run dev
+  
 
-### `npm run eject`
+## Como usar:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### 1 - Ao acessar, você se depará com está página inicial <<
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![Pagina principal imagem](https://github.com/fuentes71/Projeto-Blog/tree/main/public/assets/screenShots/homePage.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### 2 - Caso não goste do Light Mode, tem a versão Dark Mode... :) <<
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+![DarkMode imagem](https://github.com/fuentes71/Projeto-Blog/tree/main/public/assets/screenShots/homePage-DarkMode.png)
 
-## Learn More
+### 3 - Teria a tela de usuarios, mostrando todos ja vinculados a api <<
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![lista de usuarios imagem](https://github.com/fuentes71/Projeto-Blog/tree/main/public/assets/screenShots/pageListUsers.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 4 - Está seria a tela após clicar no "Saiba mais", será redirecionado para a noticia podendo ver os comentarios e clicando no perfil do usuario sera redirecionado para a pagina mostrada anteriormente.  <<
+
+![pagina artigo imagem](https://github.com/fuentes71/Projeto-Blog/tree/main/public/assets/screenShots/article.png)
+
+### 5 - Foi feito responsividade em todas as páginas, para que elas se adaptem a todos os tipos de telas. Segui alguns exemplos...  <<
+
+![pagina artigo responsividade: Notebook imagem](https://github.com/fuentes71/Projeto-Blog/tree/main/public/assets/screenShots/responsiveNote.png)
+
+![pagina artigo responsividade: smarthphone imagem](https://github.com/fuentes71/Projeto-Blog/tree/main/public/assets/screenShots/responsiveSmarthPhone.png)
+
+
+## Features
+
+As principais características do aplicativo são:
+ - Útilização de API para simular um site estilo BLOG.
+
+
+
+## Links
+  - Deploy on https://mellifluous-sunburst-0aa1cd.netlify.app
+  - Repository: https://github.com/fuentes71/Projeto-Blog
+
+
+  ## Versão
+
+  1.0.0.0
+
+
+
+  ## Autoria
+
+  # **Matheus Fuentes Pereira** 
+
+  - Siga-me no GitHub e veja mais projetos futuros :)
+  
+  - Obrigado pela visita e Bons codigos Dev. <3
