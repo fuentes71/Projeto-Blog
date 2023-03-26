@@ -1,4 +1,4 @@
-![logo do projeto](https://github.com/fuentes71/Projeto-Blog/tree/main/public/assets/favicon.ico)
+![logo do projeto](https://raw.githubusercontent.com/fuentes71/Projeto-Blog/main/public/assets/favicon.ico)
 
 ## Wireless Tech Lab.
  - Este projeto seria uma simulação de um blog mostrando alguns exemplos.
@@ -37,25 +37,25 @@ Aqui estão as tecnologias utilizadas neste projeto.
 
 ### 1 - Ao acessar, você se depará com está página inicial <<
 
-![Pagina principal imagem](https://github.com/fuentes71/Projeto-Blog/tree/main/public/assets/screenShots/homePage.png)
+![Pagina principal imagem](https://github.com/fuentes71/Projeto-Blog/blob/main/public/assets/screenShots/homePage.png)
 
 ### 2 - Caso não goste do Light Mode, tem a versão Dark Mode... :) <<
 
-![DarkMode imagem](https://github.com/fuentes71/Projeto-Blog/tree/main/public/assets/screenShots/homePage-DarkMode.png)
+![DarkMode imagem](https://github.com/fuentes71/Projeto-Blog/blob/main/public/assets/screenShots/homePage-DarkMode.png)
 
 ### 3 - Teria a tela de usuarios, mostrando todos ja vinculados a api <<
 
-![lista de usuarios imagem](https://github.com/fuentes71/Projeto-Blog/tree/main/public/assets/screenShots/pageListUsers.png)
+![lista de usuarios imagem](https://github.com/fuentes71/Projeto-Blog/blob/main/public/assets/screenShots/pageListUsers.png)
 
 ### 4 - Está seria a tela após clicar no "Saiba mais", será redirecionado para a noticia podendo ver os comentarios e clicando no perfil do usuario sera redirecionado para a pagina mostrada anteriormente.  <<
 
-![pagina artigo imagem](https://github.com/fuentes71/Projeto-Blog/tree/main/public/assets/screenShots/article.png)
+![pagina artigo imagem](https://github.com/fuentes71/Projeto-Blog/blob/main/public/assets/screenShots/article.png)
 
 ### 5 - Foi feito responsividade em todas as páginas, para que elas se adaptem a todos os tipos de telas. Segui alguns exemplos...  <<
 
-![pagina artigo responsividade: Notebook imagem](https://github.com/fuentes71/Projeto-Blog/tree/main/public/assets/screenShots/responsiveNote.png)
+![pagina artigo responsividade: Notebook imagem](https://github.com/fuentes71/Projeto-Blog/blob/main/public/assets/screenShots/responsiveNote.png)
 
-![pagina artigo responsividade: smarthphone imagem](https://github.com/fuentes71/Projeto-Blog/tree/main/public/assets/screenShots/responsiveSmarthPhone.png)
+![pagina artigo responsividade: smarthphone imagem](https://github.com/fuentes71/Projeto-Blog/blob/main/public/assets/screenShots/responsiveSmarthPhone.png)
 
 
 ## Features
